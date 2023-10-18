@@ -56,7 +56,6 @@ const SearchMovies = () => {
     searchData();
   }, [queryValue]);
 
-
   const currentPage = parseInt(pageValue, 10) || 1; // ubah ke angka bilangan bulat dan defaultnya 1 jika kosong
   const nextPage = currentPage + 1;
   const prevPage = currentPage - 1;
