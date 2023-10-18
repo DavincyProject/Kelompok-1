@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert2";
+import { Button } from "react-bootstrap";
 import GoogleLogin from "../GoogleLogin";
-import FacebookLogin from "../FacebookLogin";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -87,7 +87,7 @@ const Login = () => {
                     <div className="form-outline mb-4">
                       <input
                         type="email"
-                        id="form3Example3"
+                        id="formBasicEmail"
                         className="form-control"
                         placeholder="Email address"
                         value={email}
@@ -97,7 +97,7 @@ const Login = () => {
                     <div className="form-outline mb-4">
                       <input
                         type="password"
-                        id="form3Example3"
+                        id="formBasicPassword"
                         className="form-control"
                         placeholder="Password"
                         value={password}
@@ -132,14 +132,23 @@ const Login = () => {
                         </div>
                       </div>
 
-                      <button
-                        type="button"
-                        className="btn btn-link btn-floating mx-1"
-                      >
+                      <div className="d-flex gap-3 justify-content-evenly flex-wrap">
                         <GoogleLogin buttonText={"Login with Google"} />
-                      </button>
 
-                      <FacebookLogin buttonText={"Login with Facebook"} />
+                        <Button className="bg-white text-black fw-semibold w-100">
+                          <span>
+                            <img
+                              src="/facebook.svg"
+                              style={{
+                                width: "30px",
+                                marginRight: "5px",
+                              }}
+                              alt="facebook_logo"
+                            />
+                          </span>
+                          Login With Facebook
+                        </Button>
+                      </div>
                     </div>
                   </form>
                 </div>
