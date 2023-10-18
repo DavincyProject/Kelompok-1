@@ -103,7 +103,7 @@ const Register = () => {
   return (
     <div className="d-flex min-vh-100 justify-content-center align-items-center text-black">
       <div
-        className="mt-5 px-4 py-5 px-md-5 text-center text-lg-start rounded mx-2"
+        className="mt-5 px-4 py-3 px-md-5 text-center text-lg-start rounded mx-2"
         style={{ backgroundColor: "hsl(0, 0%, 96%)" }}
       >
         <div className="container">
@@ -115,7 +115,7 @@ const Register = () => {
                   Sign up to Access our Movie Collection
                 </span>
               </h1>
-              <p className="mb-4 text-danger opacity-75 fw-semibold">
+              <p className="mb-4 text-danger opacity-50 fw-semibold">
                 By signing up, you&apos;ll be able to explore thousands of
                 movies and receive personalized recommendations tailored to your
                 preferences.

@@ -62,7 +62,7 @@ const Login = () => {
   return (
     <div className="d-flex min-vh-100 justify-content-center align-items-center text-black">
       <div
-        className="mt-5 px-4 py-5 px-md-5 text-center text-lg-start rounded mx-2"
+        className="mt-5 px-4 py-3 px-md-5 text-center text-lg-start rounded mx-2"
         style={{ backgroundColor: "hsl(0, 0%, 96%)" }}
       >
         <div className="container">
@@ -74,7 +74,7 @@ const Login = () => {
                   Log in to Access our Movie Collection
                 </span>
               </h1>
-              <p className="mb-4 text-danger opacity-75 fw-semibold">
+              <p className="mb-4 text-danger opacity-50 fw-semibold">
                 If you already have an account, please enter your login
                 information to continue.
               </p>
