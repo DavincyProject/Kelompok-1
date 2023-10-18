@@ -32,26 +32,36 @@ const Profile = () => {
     <div className="mt-5 text-white p-3">
       <div>
         <ul>
-          <li>Name : {profile.name}</li>
-          <li>Email : {profile.email}</li>
-
           <div className="mr-2 flex-1 bg-white bg-opacity-25 mt-5 card justify-content-center align-items-center text-white">
-            <div className="card-body">Public Profile</div>
+            <div className="card-body ">My Profile</div>
           </div>
+          <center>
+            <div
+              className="mt-4 card center "
+              style={{ width: "7rem", borderRadius: "50%" }}
+            >
+              <img
+                className="poto_kosong"
+                src="/poto_kosong.png"
+                alt="poto_kosong"
+              />
+            </div>
+          </center>
 
-          <p className="mt-5">First Name</p>
-          <div className="mr-2 flex-1 bg-white-75  card justify-content-center align-items-left text-black mb-4 w-50">
-            <div className="card-body">Fahmi</div>
-          </div>
+          <div className="d-flex flex-col gap-2">
+            <div>
+              <p className="m-0">Name </p>
+              <div className="mr-2 flex-1 bg-white -25 card justify-content-center align-items-center text-black">
+                <div className="card-body">{profile.name}</div>
+              </div>
+            </div>
 
-          <p className="mt-5">First Last</p>
-          <div className="mr-2 flex-1 bg-white-75  card justify-content-center align-items-left text-black mb-4 w-50">
-            <div className="card-body">Alfareza</div>
-          </div>
-
-          <p className="mt-5">Email</p>
-          <div className="mr-2 flex-1 bg-white-75  card justify-content-center align-items-left text-black mb-4 w-50">
-            <div className="card-body">Falfareza@binaracademy.org</div>
+            <div>
+              <p className="m-0">Email</p>
+              <div className="mr-2 flex-1 bg-white -25 card justify-content-center align-items-center text-black">
+                <div className="card-body">{profile.email}</div>
+              </div>
+            </div>
           </div>
         </ul>
       </div>
