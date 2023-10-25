@@ -64,10 +64,6 @@ const SearchMovies = () => {
     return <h1 className="text-white text-center mt-5">{errors.message}</h1>;
   }
 
-  if (searchedMovies.length === 0) {
-    return <h1 className="mt-5 ms-5 text-white">Loading....</h1>;
-  }
-
   return (
     <>
       <h1 className="mt-5 mx-5 text-light">
