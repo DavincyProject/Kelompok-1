@@ -150,6 +150,10 @@ const Login = () => {
                                                     }
                                                 />
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a68a511e2ff25631e383957493230c81accaad37
 {/*                                                 <Button className="bg-white text-black fw-semibold w-100">
                                                     <span>
                                                         <img
