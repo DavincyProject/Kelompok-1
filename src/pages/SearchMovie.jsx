@@ -10,7 +10,7 @@ const SearchMovies = () => {
 
     const [searchParams] = useSearchParams();
     const pageValue = parseInt(searchParams.get("page"), 10) || 1;
-    const queryValue = searchParams.get("query");
+    const queryValue = searchParams.get("query") || "wait";
 
     useEffect(() => {
         dispatch(getSearchData(queryValue, pageValue));
@@ -23,6 +23,10 @@ const SearchMovies = () => {
         return <h1 className="mt-5 ms-5 text-white">Loading....</h1>;
     }
 
+    if (queryValue === "wait") {
+        return <h1 className="mt-5 ms-5 text-white">Waiting For Data...</h1>;
+    }
+
     return (
         <>
             <h1 className="mt-5 mx-5 text-light">
@@ -32,7 +36,7 @@ const SearchMovies = () => {
                 {searchedMovies.map((movie) => (
                     <div
                         key={movie?.id}
-                        className="card text-light bg-dark responsive-image"
+                        className="card text-light bg-dark responsive-image custom-anim"
                     >
                         <Link
                             to={`/details/${movie.id}`}
