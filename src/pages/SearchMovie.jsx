@@ -17,6 +17,7 @@ const SearchMovies = () => {
         dispatch(getSearchData(queryValue, pageValue));
     }, [dispatch, queryValue, pageValue]);
 
+
     const nextPage = pageValue + 1;
     const prevPage = pageValue - 1;
 

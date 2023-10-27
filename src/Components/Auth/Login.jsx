@@ -150,7 +150,9 @@ const Login = () => {
                                                     }
                                                 />
 
+
                                                 {/*<Button className="bg-white text-black fw-semibold w-100">
+
                                                     <span>
                                                         <img
                                                             src="/facebook.svg"
@@ -163,7 +165,9 @@ const Login = () => {
                                                         />
                                                     </span>
                                                     Login With Facebook
+
                                                 </Button> */}
+
                                             </div>
                                         </div>
                                     </form>

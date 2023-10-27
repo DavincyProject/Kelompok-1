@@ -87,6 +87,7 @@ const NavbarComponent = () => {
                     </Link>
                 </Navbar.Brand>
 
+
                 {user && (
                     <>
                         <Navbar.Toggle
@@ -114,6 +115,7 @@ const NavbarComponent = () => {
                                                         }}
                                                     />
                                                 </Dropdown.Toggle>
+
 
                                                 <Dropdown.Menu
                                                     id="dropdown-button-drop-start"
