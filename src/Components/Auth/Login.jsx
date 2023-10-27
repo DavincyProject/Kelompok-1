@@ -13,6 +13,7 @@ const Login = () => {
         message: null,
     });
 
+
     const token = localStorage.getItem("token");
 
     if (token) {
@@ -63,6 +64,7 @@ const Login = () => {
             customError(error?.message);
         }
     };
+
 
     return (
         <div className="d-flex min-vh-100 justify-content-center align-items-center text-black">
@@ -151,7 +153,9 @@ const Login = () => {
                                                 />
 
 
+
                                                 {/*<Button className="bg-white text-black fw-semibold w-100">
+
 
                                                     <span>
                                                         <img
@@ -166,7 +170,9 @@ const Login = () => {
                                                     </span>
                                                     Login With Facebook
 
+
                                                 </Button> */}
+
 
                                             </div>
                                         </div>

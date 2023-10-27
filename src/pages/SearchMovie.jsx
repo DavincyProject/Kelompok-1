@@ -12,11 +12,10 @@ const SearchMovies = () => {
     const [searchParams] = useSearchParams();
     const pageValue = parseInt(searchParams.get("page"), 10) || 1;
     const queryValue = searchParams.get("query") || "wait";
-
+  
     useEffect(() => {
         dispatch(getSearchData(queryValue, pageValue));
     }, [dispatch, queryValue, pageValue]);
-
 
     const nextPage = pageValue + 1;
     const prevPage = pageValue - 1;

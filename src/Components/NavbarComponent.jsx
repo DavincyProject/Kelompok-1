@@ -64,6 +64,7 @@ const NavbarComponent = () => {
         window.location.replace("/login");
     };
 
+
     return (
         <Navbar
             bg="transparent"
@@ -93,6 +94,7 @@ const NavbarComponent = () => {
                         <Navbar.Toggle
                             aria-controls="navbarScroll"
                             className="bg-danger text-danger"
+
                         />
                         <Navbar.Collapse id="navbarScroll">
                             <Form
