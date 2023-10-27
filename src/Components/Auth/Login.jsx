@@ -151,8 +151,12 @@ const Login = () => {
                                                 />
 
 
+<<<<<<< HEAD
                                                 {/*<Button className="bg-white text-black fw-semibold w-100">
 
+=======
+{/*                                                 <Button className="bg-white text-black fw-semibold w-100">
+>>>>>>> e898cfa21f9cf23d7f36ccdfee4f10d86de513f6
                                                     <span>
                                                         <img
                                                             src="/facebook.svg"
@@ -165,9 +169,13 @@ const Login = () => {
                                                         />
                                                     </span>
                                                     Login With Facebook
+<<<<<<< HEAD
 
                                                 </Button> */}
 
+=======
+                                                </Button> */}
+>>>>>>> e898cfa21f9cf23d7f36ccdfee4f10d86de513f6
                                             </div>
                                         </div>
                                     </form>

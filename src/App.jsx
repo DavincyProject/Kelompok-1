@@ -14,7 +14,10 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 
 function App() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e898cfa21f9cf23d7f36ccdfee4f10d86de513f6
   return (
     <Provider store={store}>
       <GoogleOAuthProvider
@@ -78,7 +81,10 @@ function App() {
       </GoogleOAuthProvider>
     </Provider>
   );
+<<<<<<< HEAD
 
+=======
+>>>>>>> e898cfa21f9cf23d7f36ccdfee4f10d86de513f6
 }
 
 export default App;
