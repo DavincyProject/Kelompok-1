@@ -7,6 +7,7 @@ import getSearchData from "../redux/actions/searchActions";
 const SearchMovies = () => {
     const dispatch = useDispatch();
     const searchedMovies = useSelector((state) => state.search.searchedMovies);
+    const totalPages = useSelector((state) => state.search.totalPages);
 
     const [searchParams] = useSearchParams();
     const pageValue = parseInt(searchParams.get("page"), 10) || 1;
@@ -93,12 +94,14 @@ const SearchMovies = () => {
                     </Link>
                 )}
 
-                <Link
-                    to={`/search?query=${queryValue}&page=${nextPage}`}
-                    className="btn btn-primary"
-                >
-                    Next Page
-                </Link>
+                {nextPage <= totalPages && (
+                    <Link
+                        to={`/search?query=${queryValue}&page=${nextPage}`}
+                        className="btn btn-primary"
+                    >
+                        Next Page
+                    </Link>
+                )}
             </div>
         </>
     );
