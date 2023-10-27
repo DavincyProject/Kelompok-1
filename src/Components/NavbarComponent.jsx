@@ -151,7 +151,7 @@ const NavbarComponent = () => {
                                         <FormControl
                                             type="search"
                                             placeholder="What do you want to watch?"
-                                            className="mr-2 flex-1 bg-white bg-opacity-25 text-danger fw-semibold border-danger text-danger"
+                                            className="mr-2 flex-1 bg-white bg-opacity-25 text-dark border-danger "
                                             aria-label="Search"
                                             name="search"
                                         />
