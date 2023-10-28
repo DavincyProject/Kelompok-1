@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import { Button } from "react-bootstrap";
 import GoogleLogin from "../GoogleLogin";
 import { useDispatch } from "react-redux";
+import { login } from "../../redux/actions/authAction";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,7 +16,6 @@ const Login = () => {
 
   const onLogin = async (event) => {
     event.preventDefault();
-
     dispatch(login(email, password, navigate));
   };
 
