@@ -23,7 +23,9 @@ export const getSearchData =
                     }
                 );
 
+
                 const { data, total_pages, total_results } = response.data;
+
                 dispatch(setTotalPages(total_pages));
                 dispatch(setTotalResult(total_results));
                 dispatch(setSearchedMovies(data));

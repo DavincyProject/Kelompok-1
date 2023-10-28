@@ -26,7 +26,9 @@ const SearchMovies = () => {
     const nextPage = pageValue + 1;
     const prevPage = pageValue - 1;
 
+
     if (totalResult > 0 && searchedMovies.length === 0) {
+
         return (
             <>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5">
@@ -34,12 +36,15 @@ const SearchMovies = () => {
                         animation="border"
                         role="status"
                         variant="light"
+
                         className="mt-5"
+
                     ></Spinner>
                     <h1 className="text-white">Loading...</h1>
                 </div>
             </>
         );
+
     }
 
     if (totalResult === 0) {
@@ -50,6 +55,7 @@ const SearchMovies = () => {
                 </h1>
             </div>
         );
+
     }
 
     return (
