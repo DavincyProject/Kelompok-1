@@ -1,5 +1,6 @@
 import axios from "axios";
 import { setToken, setUser } from "../reducers/authReducer";
+import Swal from "sweetalert2";
 
 export const registerLoginWithGoogleAction =
   (accessToken, navigate) => async (dispatch) => {
@@ -38,9 +39,50 @@ export const logout = () => (dispatch) => {
   dispatch(setUser(null));
 };
 
-// export const register = (email, password, navigate) => async (dispatch) => {
+export const register =
+  (email, name, password, navigate) => async (dispatch) => {
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_VERCEL_AUTH}/register`,
+        {
+          email,
+          name,
+          password,
+        }
+      );
 
-// }
+      const { data } = response.data;
+      const { token } = data;
+      // Save our token and global state
+      dispatch(setToken(token));
+
+      Swal.fire({
+        title: "Success!",
+        text: "Registrasi Berhasil Silahkan Login!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+
+      navigate("/login");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        Swal.fire({
+          title: "Failed!",
+          text: error?.response?.data?.message,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        return;
+      }
+
+      Swal.fire({
+        title: "Failed!",
+        text: error?.message,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    }
+  };
 
 export const login = (email, password, navigate) => async (dispatch) => {
   try {
