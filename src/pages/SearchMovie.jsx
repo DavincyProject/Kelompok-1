@@ -27,6 +27,7 @@ const SearchMovies = () => {
     const prevPage = pageValue - 1;
 
     if (totalResult > 0 && searchedMovies.length === 0) {
+
         return (
             <>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5">
@@ -40,6 +41,18 @@ const SearchMovies = () => {
                 </div>
             </>
         );
+
+    }
+
+    if (totalResult === 0) {
+        return (
+            <div className="d-flex flex-column align-items-center justify-content-center mt-5">
+                <h1 className="text-white mt-5">
+                    <q>{queryValue}</q> Not Found :(
+                </h1>
+            </div>
+        );
+
     }
 
     if (totalResult === 0) {
