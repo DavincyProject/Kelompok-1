@@ -8,97 +8,6 @@ import { useDispatch } from "react-redux";
 import { login } from "../../redux/actions/authAction";
 
 const Login = () => {
-<<<<<<< HEAD
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({
-    isError: false,
-    message: null,
-  });
-
-<<<<<<< HEAD
-  const token = localStorage.getItem("token");
-=======
-
-    const token = localStorage.getItem("token");
->>>>>>> fcc98c4dce77c2e75e5d1631cf5fca052f43a7e9
-
-  if (token) {
-    window.location.replace("/");
-  }
-  const login = async (event) => {
-    event.preventDefault();
-
-    const customError = (error) => {
-      swal.fire({
-        title: "Failed!",
-        text: `${error}`,
-        icon: "error",
-        confirmButtonText: "OK",
-        color: "red",
-      });
-    };
-
-<<<<<<< HEAD
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_VERCEL_AUTH}/login`,
-        {
-          email,
-          password,
-        }
-      );
-      const { data } = response.data;
-      const { token } = data;
-
-      localStorage.setItem("token", token);
-
-      window.location.replace("/");
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
-        setErrors({
-          ...errors,
-          isError: true,
-          message: error?.response?.data?.message || error?.message,
-        });
-        customError(error?.response?.data?.message || error?.message);
-        return;
-      }
-      setErrors({
-        ...errors,
-        isError: true,
-        message: error?.message,
-      });
-      customError(error?.message);
-    }
-  };
-
-  return (
-    <div className="d-flex min-vh-100 justify-content-center align-items-center text-black">
-      <div
-        className="mt-5 px-4 py-3 px-md-5 text-center text-lg-start rounded mx-2"
-        style={{ backgroundColor: "hsl(0, 0%, 96%)" }}
-      >
-        <div className="container">
-          <div className="row gx-lg-5 align-items-center">
-            <div className="col-lg-6 mb-2 mb-lg-0">
-              <h1 className="fs-1 my-4 display-3 fw-bold ls-tight">
-                Welcome Back! <br />
-                <span className="text-danger fs-4">
-                  Log in to Access our Movie Collection
-                </span>
-              </h1>
-              <p className="mb-4 text-danger opacity-50 fw-semibold">
-                If you already have an account, please enter your login
-                information to continue.
-              </p>
-            </div>
-
-            <div className="col-lg-6 mb-5 mb-lg-0">
-              <div className="card">
-                <div className="card-body py-5 px-md-5">
-                  <form onSubmit={login}>
-=======
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -135,7 +44,6 @@ const Login = () => {
               <div className="card">
                 <div className="card-body py-5 px-md-5">
                   <form onSubmit={onLogin}>
->>>>>>> f1bbc58e4ccf69a06f087a1e56b45d659c580abc
                     <div className="form-outline mb-4">
                       <input
                         type="email"
@@ -177,31 +85,6 @@ const Login = () => {
                       <div className="row">
                         <div className="col">
                           <hr />
-<<<<<<< HEAD
-=======
-
-    return (
-        <div className="d-flex min-vh-100 justify-content-center align-items-center text-black">
-            <div
-                className="mt-5 px-4 py-3 px-md-5 text-center text-lg-start rounded mx-2"
-                style={{ backgroundColor: "hsl(0, 0%, 96%)" }}
-            >
-                <div className="container">
-                    <div className="row gx-lg-5 align-items-center">
-                        <div className="col-lg-6 mb-2 mb-lg-0">
-                            <h1 className="fs-1 my-4 display-3 fw-bold ls-tight">
-                                Welcome Back! <br />
-                                <span className="text-danger fs-4">
-                                    Log in to Access our Movie Collection
-                                </span>
-                            </h1>
-                            <p className="mb-4 text-danger opacity-50 fw-semibold">
-                                If you already have an account, please enter
-                                your login information to continue.
-                            </p>
->>>>>>> fcc98c4dce77c2e75e5d1631cf5fca052f43a7e9
-=======
->>>>>>> f1bbc58e4ccf69a06f087a1e56b45d659c580abc
                         </div>
                         <div className="col-auto">or</div>
                         <div className="col">
@@ -211,25 +94,8 @@ const Login = () => {
 
                       <div className="d-flex gap-3 justify-content-evenly flex-wrap">
                         <GoogleLogin buttonText={"Login with Google"} />
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-                        {/*                                                 <Button className="bg-white text-black fw-semibold w-100">
-=======
-                                            <div className="d-flex gap-3 justify-content-evenly flex-wrap">
-                                                <GoogleLogin
-                                                    buttonText={
-                                                        "Login with Google"
-                                                    }
-                                                />
-
-                                                {/*<Button className="bg-white text-black fw-semibold w-100">
-
->>>>>>> fcc98c4dce77c2e75e5d1631cf5fca052f43a7e9
-=======
 
                         {/*                                                 <Button className="bg-white text-black fw-semibold w-100">
->>>>>>> f1bbc58e4ccf69a06f087a1e56b45d659c580abc
                                                     <span>
                                                         <img
                                                             src="/facebook.svg"

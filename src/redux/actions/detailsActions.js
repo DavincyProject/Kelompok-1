@@ -1,10 +1,11 @@
 import axios from "axios";
 
 import { setDetailMovie } from "../reducers/detailsReducers";
+import { isAxiosError } from "axios";
 
 export const getDetail = (id) => async (dispatch, getState) => {
   try {
-    const { token } = getState().popular;
+    const { token } = getState().auth;
     const response = await axios.get(
       `${import.meta.env.VITE_VERCEL_API_URL}/${id}`,
       {
@@ -15,7 +16,11 @@ export const getDetail = (id) => async (dispatch, getState) => {
     );
     const { data } = response.data;
     dispatch(setDetailMovie(data));
-  } catch (err) {
-    alert.error(`Error: ${err}`);
+  } catch (error) {
+    if (isAxiosError(error)) {
+      alert(error?.response?.data?.message);
+      return;
+    }
+    alert(error?.message);
   }
 };

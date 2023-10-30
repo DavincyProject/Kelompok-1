@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ModalComponent from "../Components/ModalVideo/ModalComponent";
 import "./details.css";
@@ -11,6 +11,7 @@ const Details = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const detailsMovie = useSelector((state) => state.detail.detailMovie);
+
   const [selectId, setSelectId] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
@@ -19,6 +20,7 @@ const Details = () => {
   useEffect(() => {
     dispatch(getDetail(id));
   }, [dispatch, id]);
+
   const handleShowModal = (movieId) => {
     setSelectId(movieId);
     setShowModal(true);
@@ -28,6 +30,22 @@ const Details = () => {
     setSelectId(null);
     setShowModal(false);
   };
+
+  if (detailsMovie.poster_path === undefined) {
+    return (
+      <>
+        <div className="d-flex flex-column align-items-center justify-content-center mt-5">
+          <Spinner
+            animation="border"
+            role="status"
+            variant="light"
+            className="mt-5"
+          ></Spinner>
+          <h1 className="text-white">Loading...</h1>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -113,9 +131,9 @@ const Details = () => {
                 {detailsMovie?.production_countries &&
                 detailsMovie.production_countries.length > 0 ? (
                   detailsMovie?.production_countries?.map((country) => (
-                    <span key={country.id} className="badge bg-primary me-2">
+                    <div key={country.id} className="badge bg-primary me-2">
                       {country.name}
-                    </span>
+                    </div>
                   ))
                 ) : (
                   <span className="badge bg-danger me-2">Data Not Found</span>

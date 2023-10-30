@@ -5,7 +5,7 @@ export const getUser =
   (navigate, navigatePathSuccess, navigatePathError) =>
   async (dispatch, getState) => {
     try {
-      const { token } = getState().popular;
+      const { token } = getState().auth;
 
       const { data } = await axios.get(
         `${import.meta.env.VITE_VERCEL_AUTH}/me`,
