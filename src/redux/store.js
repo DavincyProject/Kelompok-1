@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import thunk from "redux-thunk";
 import rootReducers from "./reducers";
+import searchReducers from "./reducers/searchReducers";
 
-// Membuat database penyimpanan atau status sementara
 export default configureStore({
-  reducer: rootReducers,
-  devTools: import.meta.env.MODE === "development",
+    reducer: rootReducers,
+    search: searchReducers,
+    devTools: import.meta.env.MODE === "development",
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });
