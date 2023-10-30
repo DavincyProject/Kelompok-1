@@ -1,33 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { getUser } from "../redux/actions/profileActions";
 import { Button } from "react-bootstrap";
-import axios from "axios";
 
 const Profile = () => {
-  const [profile, setProfile] = useState([]);
+  const dispatch = useDispatch();
+  const profile = useSelector((state) => state.profil.user);
 
   useEffect(() => {
-    const getProfileDetail = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        const response = await axios.get(
-          `${import.meta.env.VITE_VERCEL_AUTH}/me`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-        const { data } = response.data;
-        setProfile(data);
-      } catch (error) {
-        if (axios.isAxiosError(error)) {
-          console.log(error?.response?.data?.message);
-          return;
-        }
-      }
-    };
-    getProfileDetail();
-  }, []);
+    dispatch(getUser());
+  }, [dispatch]);
 
   return (
     <div
