@@ -12,7 +12,7 @@ export const registerLoginWithGoogleAction =
       let config = {
         method: "post",
         maxBodyLength: Infinity,
-        url: `${import.meta.env.VITE_VERCEL_AUTH}/login`,
+        url: `${import.meta.env.VITE_VERCEL_AUTH}/google`,
         headers: {
           "Content-Type": "application/json",
         },
