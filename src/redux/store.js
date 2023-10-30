@@ -11,6 +11,7 @@ export default configureStore({
     reducer: rootReducers,
     search: searchReducers,
     devTools: import.meta.env.MODE === "development",
+<<<<<<< HEAD
 =======
   reducer: rootReducers,
   search: searchReducers,
@@ -18,3 +19,7 @@ export default configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 >>>>>>> fcc98c4dce77c2e75e5d1631cf5fca052f43a7e9
 });
+=======
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+});
+>>>>>>> f1bbc58e4ccf69a06f087a1e56b45d659c580abc

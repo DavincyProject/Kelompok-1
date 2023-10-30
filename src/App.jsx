@@ -79,68 +79,73 @@ function App() {
   );
 =======
     return (
-        <Provider store={store}>
-            <GoogleOAuthProvider
-                clientId={import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID}
-            >
-                <BrowserRouter>
-                    <NavbarComponent />
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <ProtectedRoute>
-                                    <Home />
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            path="/details/:id"
-                            element={
-                                <ProtectedRoute>
-                                    <Details />
-                                </ProtectedRoute>
-                            }
-                        />
+        <Provider store={store}> 
+        <GoogleOAuthProvider
+            clientId={import.meta.env.VITE_GOOGLE_OAUTH_CLIENT_ID}
+        >
+            <BrowserRouter>
+                <NavbarComponent />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <ProtectedRoute>
+                                <Home />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/details/:id"
+                        element={
+                            <ProtectedRoute>
+                                <Details />
+                            </ProtectedRoute>
+                        }
+                    />
 
-                        <Route
-                            path="/search"
-                            element={
-                                <ProtectedRoute>
-                                    <SearchMovie />
-                                </ProtectedRoute>
-                            }
-                        />
+                    <Route
+                        path="/search"
+                        element={
+                            <ProtectedRoute>
+                                <SearchMovie />
+                            </ProtectedRoute>
+                        }
+                    />
 
-                        <Route
-                            path="/profile"
-                            element={
-                                <ProtectedRoute>
-                                    <Profile />
-                                </ProtectedRoute>
-                            }
-                        />
+                    <Route
+                        path="/profile"
+                        element={
+                            <ProtectedRoute>
+                                <Profile />
+                            </ProtectedRoute>
+                        }
+                    />
 
-                        {/* authentication */}
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
+                    {/* authentication */}
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/register" element={<Register />} />
 
-                        {/* handle error path */}
-                        <Route
-                            path="*"
-                            element={
-                                <ProtectedRoute>
-                                    <Error />
-                                </ProtectedRoute>
-                            }
-                        />
-                    </Routes>
-                    <Footer />
-                </BrowserRouter>
-            </GoogleOAuthProvider>
+                    {/* handle error path */}
+                    <Route
+                        path="*"
+                        element={
+                            <ProtectedRoute>
+                                <Error />
+                            </ProtectedRoute>
+                        }
+                    />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+            
+        </GoogleOAuthProvider>
         </Provider>
+<<<<<<< HEAD
     );
 >>>>>>> fcc98c4dce77c2e75e5d1631cf5fca052f43a7e9
+=======
+    )
+>>>>>>> f1bbc58e4ccf69a06f087a1e56b45d659c580abc
 }
 
 export default App;
