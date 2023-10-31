@@ -54,8 +54,6 @@ const SearchMovies = () => {
         );
     }
 
-    }
-
     return (
         <>
             <h1 className="mt-5 mx-5 text-light">
