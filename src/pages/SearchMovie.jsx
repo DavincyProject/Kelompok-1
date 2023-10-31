@@ -6,6 +6,7 @@ import { Spinner } from "react-bootstrap";
 import getSearchData from "../redux/actions/searchActions";
 import "../Components/CardComponent/popularcard.css";
 import { setSearchedMovies } from "../redux/reducers/searchReducers";
+import { getUser } from "../redux/actions/profileAction";
 const SearchMovies = () => {
     const dispatch = useDispatch();
     const { searchedMovies, totalPages, totalResult } = useSelector(
@@ -17,6 +18,7 @@ const SearchMovies = () => {
     const queryValue = searchParams.get("query");
 
     useEffect(() => {
+        dispatch(getUser());
         dispatch(getSearchData(queryValue, pageValue));
         return () => {
             dispatch(setSearchedMovies([]));
@@ -27,7 +29,6 @@ const SearchMovies = () => {
     const prevPage = pageValue - 1;
 
     if (totalResult > 0 && searchedMovies.length === 0) {
-
         return (
             <>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5">
@@ -41,7 +42,6 @@ const SearchMovies = () => {
                 </div>
             </>
         );
-
     }
 
     if (totalResult === 0) {
@@ -52,7 +52,6 @@ const SearchMovies = () => {
                 </h1>
             </div>
         );
-
     }
 
     if (totalResult === 0) {

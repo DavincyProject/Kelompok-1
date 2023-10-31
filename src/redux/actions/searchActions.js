@@ -9,7 +9,7 @@ import { isAxiosError } from "axios";
 export const getSearchData =
     (queryValue, pageValue) => async (dispatch, getState) => {
         try {
-            const token = getState().popular.token;
+            const { token } = getState().auth;
 
             if (queryValue) {
                 const response = await axios.get(
