@@ -21,11 +21,10 @@ export const getPopularData = () => async (dispatch, getState) => {
         dispatch(setTotalResult(total_results));
         dispatch(setPopularMovies(data));
     } catch (error) {
-        if (isAxiosError(error)) {
-            alert(error?.response?.data?.message);
+        if (isAxiosError(error) && error.response) {
+            console.error(error?.response?.data?.message);
             return;
         }
-        alert(error?.message);
     }
 };
 

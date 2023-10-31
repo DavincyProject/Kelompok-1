@@ -18,10 +18,9 @@ export const getDetail = (id, languageValue) => async (dispatch, getState) => {
         const { data } = response.data;
         dispatch(setDetailMovie(data));
     } catch (error) {
-        if (isAxiosError(error)) {
-            alert(error?.response?.data?.message);
+        if (isAxiosError(error) && error.response) {
+            console.error(error?.response?.data?.message);
             return;
         }
-        alert(error?.message);
     }
 };

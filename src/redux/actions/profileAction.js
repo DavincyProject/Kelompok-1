@@ -18,8 +18,8 @@ export const getUser = () => async (dispatch, getState) => {
 
         dispatch(setUser(data));
     } catch (error) {
-        if (axios.isAxiosError(error)) {
-            console.log(error?.response?.data?.message);
+        if (axios.isAxiosError(error) && error.response.status) {
+            console.error(error?.response?.data?.message);
             return;
         }
     }

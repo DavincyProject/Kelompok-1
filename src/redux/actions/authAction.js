@@ -27,7 +27,7 @@ export const registerLoginWithGoogleAction =
 
             navigate("/");
         } catch (error) {
-            if (axios.isAxiosError(error)) {
+            if (axios.isAxiosError(error) && error.response) {
                 console.error(error.response.data.message);
                 return;
             }
@@ -64,7 +64,7 @@ export const register =
                 }
             });
         } catch (error) {
-            if (axios.isAxiosError(error)) {
+            if (axios.isAxiosError(error) && error.response) {
                 Swal.fire({
                     title: "Failed!",
                     text: error?.response?.data?.message,
@@ -111,7 +111,7 @@ export const login = (email, password, navigate) => async (dispatch) => {
             }
         });
     } catch (error) {
-        if (axios.isAxiosError(error)) {
+        if (axios.isAxiosError(error) && error.response) {
             // Handle Axios error
             const errorMessage =
                 error?.response?.data?.message || error?.message;
@@ -135,28 +135,6 @@ export const login = (email, password, navigate) => async (dispatch) => {
         }
     }
 };
-
-// export const getUser = () => async (dispatch, getState) => {
-//     try {
-//         const { token } = getState().auth;
-
-//         const response = await axios.get(
-//             `${import.meta.env.VITE_VERCEL_AUTH}/me`,
-//             {
-//                 headers: {
-//                     Authorization: `Bearer ${token}`,
-//                 },
-//             }
-//         );
-//         const { data } = response.data;
-//         dispatch(setUser(data));
-//     } catch (error) {
-//         if (axios.isAxiosError(error)) {
-//             console.log(error?.response?.data?.message);
-//             return;
-//         }
-//     }
-// };
 
 export const logout = (navigate) => (dispatch) => {
     dispatch(setToken(null));
