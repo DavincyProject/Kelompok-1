@@ -102,6 +102,7 @@ const Login = () => {
                                                         "Login with Google"
                                                     }
                                                 />
+
                                             </div>
                                         </div>
                                     </form>
