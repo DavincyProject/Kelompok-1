@@ -142,7 +142,6 @@ export const logout = (navigate) => (dispatch) => {
     navigate("/login");
 };
 
-
 export const protect =
     (navigate, navigatePathSuccess, navigatePathError) =>
     async (dispatch, getState) => {
@@ -168,4 +167,3 @@ export const protect =
             }
         }
     };
-

@@ -1,8 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 import { register } from "../../redux/actions/authAction";
 import swal from "sweetalert2";
 import GoogleLogin from "../GoogleLogin";
@@ -11,7 +9,6 @@ const Register = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-
     const { token } = useSelector((state) => state.auth);
 
     useEffect(() => {
@@ -19,7 +16,6 @@ const Register = () => {
             navigate("/");
         }
     }, [token, navigate]);
-
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
