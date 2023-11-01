@@ -134,6 +134,7 @@ export const logout = (navigate) => (dispatch) => {
 };
 
 export const protect =
+
   (navigate, navigatePathSuccess, navigatePathError) =>
   async (dispatch, getState) => {
     try {
@@ -158,4 +159,3 @@ export const protect =
       }
     }
   };
-
