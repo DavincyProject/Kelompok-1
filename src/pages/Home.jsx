@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import CarouselComponent from "../Components/CarouselComp/CarouselComponent";
 import FavouriteMovies from "../Components/PopularMovies";
